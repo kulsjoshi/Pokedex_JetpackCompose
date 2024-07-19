@@ -11,16 +11,23 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+/**
+ * @see PokeApi
+ * @see PokemonRepository
+ * This AppModule class contains the providers
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
+    //provider for the PokemonRepository
     @Singleton
     @Provides
     fun providePokemonRepository(
         api: PokeApi
     ) = PokemonRepository(api)
 
+    //provider for the PokeApi
     @Singleton
     @Provides
     fun providePokeApi(): PokeApi {
