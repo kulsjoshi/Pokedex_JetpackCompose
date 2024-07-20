@@ -8,9 +8,7 @@ import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 
 @ActivityScoped
-class PokemonRepository @Inject constructor(
-    private val api: PokeApi
-) {
+class PokemonRepository @Inject constructor(private val api: PokeApi) {
 
     /**
      * @see PokeApi

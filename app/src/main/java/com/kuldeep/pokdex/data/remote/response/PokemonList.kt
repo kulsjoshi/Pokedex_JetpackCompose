@@ -1,8 +1,5 @@
 package com.kuldeep.pokdex.data.remote.response
 
 data class PokemonList(
-    val count: Int,
-    val next: String,
-    val previous: Any,
-    val results: List<Result>
+    val result: List<String>
 )

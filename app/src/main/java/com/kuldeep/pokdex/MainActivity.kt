@@ -6,12 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
-import androidx.navigation.NamedNavArgument
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.kuldeep.pokdex.composable.PokemonListScreen
 import com.kuldeep.pokdex.ui.theme.PokédexTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             PokédexTheme {
                 //define the navController
@@ -32,7 +31,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //create different navScreens
                     composable("pokemon_list_screen") {
-
+                        PokemonListScreen()
                     }
                     //details screen needs arguments to get the more data
                     composable(
